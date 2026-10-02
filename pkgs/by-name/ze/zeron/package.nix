@@ -29,16 +29,16 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "zeron";
-  version = "0.2.101";
+  version = "0.2.102";
 
   src = fetchFromGitHub {
     owner = "zeronsh";
     repo = "zeron";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-iFQ8zRgOC7BxNl4Dqer8pLGjskEuqNo9iqlh7BQ1VDY=";
+    hash = "sha256-Ulvb5mFF6AvKl5UWhZ9+2tXXGUe91hgblSJKJU1QkJ4=";
   };
 
-  cargoHash = "sha256-4nTCxt83xiPnm7hhT/cgIX8k1ZBBVPaQlCtaYx/+xMk=";
+  cargoHash = "sha256-wcptalzdLxlimrVoEej8jRoyieMLevBp637t3Y1tKZA=";
 
   postPatch = ''
     # The in-app updater swaps the binary or the .app bundle in place, which
