@@ -166,7 +166,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     downloadPage = "https://github.com/zeronsh/zeron/releases";
     changelog = "https://github.com/zeronsh/zeron/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = with lib.maintainers; [ imTHAI ];
     mainProgram = "zeron";
     platforms = [
       "x86_64-linux"

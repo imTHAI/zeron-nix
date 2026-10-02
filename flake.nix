@@ -34,7 +34,21 @@
             drv.overrideAttrs { doCheck = false; }
           else
             drv;
-        zeron = pkgs.callPackage ./pkgs/by-name/ze/zeron/package.nix { inherit onnxruntime; };
+        zeron = pkgs.callPackage ./pkgs/by-name/ze/zeron/package.nix {
+          inherit onnxruntime;
+          # Mirrors the maintainers/maintainer-list.nix entry the nixpkgs PR adds;
+          # drop once it is merged.
+          lib = pkgs.lib.extend (
+            _: prev: {
+              maintainers = prev.maintainers // {
+                imTHAI = {
+                  github = "imTHAI";
+                  githubId = 36070606;
+                };
+              };
+            }
+          );
+        };
         default = zeron;
       });
     };
