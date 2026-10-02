@@ -53,11 +53,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     return InstallKind::Unmanaged;'
   '';
 
+  # No buildFeatures for the Metal shaders: the workspace already enables
+  # gpui_platform/runtime_shaders, so the build never reaches for the
+  # proprietary Metal compiler that zed-editor has to opt out of.
   cargoBuildFlags = [ "--package=zeron" ];
-
-  # Without it the gpui build script shells out to the proprietary Metal
-  # shader compiler, which is not available in the sandbox.
-  buildFeatures = lib.optionals stdenv.hostPlatform.isDarwin [ "gpui_platform/runtime_shaders" ];
 
   nativeBuildInputs = [
     pkg-config
