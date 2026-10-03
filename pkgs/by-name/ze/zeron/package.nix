@@ -40,6 +40,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoHash = "sha256-wcptalzdLxlimrVoEej8jRoyieMLevBp637t3Y1tKZA=";
 
+  __structuredAttrs = true;
+
   postPatch = ''
     # The in-app updater swaps the binary or the .app bundle in place, which
     # cannot work from the read-only store. Treating every install as

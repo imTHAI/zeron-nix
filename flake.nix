@@ -42,6 +42,7 @@
             _: prev: {
               maintainers = prev.maintainers // {
                 imTHAI = {
+                  name = "PBear";
                   github = "imTHAI";
                   githubId = 36070606;
                 };
